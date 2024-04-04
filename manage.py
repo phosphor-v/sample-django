@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 import os
 import sys
-
+if os.path.exists('.env'):
+    print('Importing environment from .env file')
+    for line in open('.env'):
+        var = line.strip().split('=')
+        if len(var) == 2:
+            os.environ[var[0]] = var[1]
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
     try:
