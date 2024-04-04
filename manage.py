@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+import re
 def read_env():
     try:
         with open('.env') as f:
